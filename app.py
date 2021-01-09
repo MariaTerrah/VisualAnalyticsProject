@@ -40,22 +40,21 @@ control_metrics = ["Population",
                    ]
 # year=years
 # years=['2000', '2001', '2002', '2003', '2004', '2004','2005','2006','2007','2008','2009','2010','']
-container_map = st.beta_container()
-with container_map:
-    cols = st.selectbox('Select parameter to visualize: ', control_metrics)
+
+cols = st.selectbox('Select parameter to visualize: ', control_metrics)
     # cols
 
-    if cols in control_metrics:
-        metric_to_show_in_covid_Layer = cols + ":Q"
-        metric_name = cols
-        metric_name
+if cols in control_metrics:
+    metric_to_show_in_covid_Layer = cols + ":Q"
+    metric_name = cols
+    metric_name
 
-    st.header("A global view of the parameters spread around the world.")
+st.header("A global view of the parameters spread around the world.")
 
-    '''
+'''
     In the following map, we can identify the intensity of a specific parameter for each country. 
     We can also see the evolution of these parameters from 2000 to 2018
-    '''
+'''
 ####### Map Visualization
 
 
@@ -88,14 +87,14 @@ chart = (
     )
 
 )
-with container_map:
-    map = (
+
+map = (
         (geoshape + chart)
             .configure_view(strokeWidth=0)
             .properties(width=700, height=400)
             .project("naturalEarth1")
     )
-    st.altair_chart(map)
+st.altair_chart(map)
 
 # -----------------------------------------------------------------------------------------------------------------
 st.header("Most Densly populated countries across the world! ")
