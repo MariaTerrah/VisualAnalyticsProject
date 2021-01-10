@@ -14,7 +14,7 @@ control_dataset = df
 
 def write():
     
-    image = Image.open('picture.jpeg')
+    image = Image.open('Pages/picture.jpeg')
 
     st.title("Population Analytics")
     
