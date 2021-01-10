@@ -94,22 +94,23 @@ def write():
         height=450  # set the chart height to 50 pixels
     ).interactive()
     
-    opt = st.radio(
+    collm1, collm2 = st.beta_columns(2)
+    opt = collm1.radio(
         "Select option:",
         ('Total population', 'Population living under 1.90$ a day','Population living under 5.90$ a day', 'Total population and population living under 1.90$ a day','Total population and population living under 5.90$ a day','All'))
     
     if opt == 'Total population':
-        st.altair_chart(pop)
+        collm2.altair_chart(pop)
     elif opt == 'Population living under 1.90$ a day':
-        st.altair_chart(pop190)
+        collm2.altair_chart(pop190)
     elif opt == 'Population living under 5.90$ a day':
-        st.altair_chart(pop590)
+        collm2.altair_chart(pop590)
     elif opt == 'Total population and population living under 1.90$ a day':
-        st.altair_chart(pop + pop190)
+        collm2.altair_chart(pop + pop190)
     elif opt == 'Total population and population living under 5.90$ a day':
-        st.altair_chart(pop + pop590)
+        collm2.altair_chart(pop + pop590)
     else:
-        st.altair_chart(pop + pop190 + pop590)
+        collm2.altair_chart(pop + pop190 + pop590)
     
     st.header('Comparisons between countries for different levels of poverty.')
     myexpandER = st.beta_expander('Usage')
