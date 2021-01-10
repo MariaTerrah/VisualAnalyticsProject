@@ -38,12 +38,12 @@ def write():
         bind=alt.binding_select(options=years) # bind to a menu of unique genre values
     )
     chart = alt.Chart(df).mark_point(filled=True).encode(
-        alt.Y('GDPCapita:Q', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
-        alt.X('LifeExp:Q', scale=alt.Scale(domain=(0, 85))),
+        alt.X('GDP per Capita:Q', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
+        alt.Y('Life Expectancy:Q', scale=alt.Scale(domain=(0, 85))),
         # alt.Tooltip('Country'),
         tooltip=[alt.Tooltip('Country:N'),
-                 alt.Tooltip('GDPCapita:Q'),
-                 alt.Tooltip('LifeExp:Q'),
+                 alt.Tooltip('GDP per Capita:Q'),
+                 alt.Tooltip('Life Expectancy:Q'),
                  alt.Tooltip('Population:Q')
                  ],
         size=alt.Size('Population:Q', scale=alt.Scale(range=[100, 2000])),
