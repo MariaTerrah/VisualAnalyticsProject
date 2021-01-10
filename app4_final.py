@@ -3,12 +3,12 @@ import pandas as pd
 import streamlit as st
 import altair as alt
 from vega_datasets import data
-import src.Pages.home as home
-import src.Pages.mapfeatures as mapfeatures
-import src.Pages.mapdensitypop as mapdensitypop
-import src.Pages.gdplife as gdplife
-import src.Pages.comp as comp
-import src.Pages.poverty as poverty
+import Pages.home as home
+import Pages.mapfeatures as mapfeatures
+import Pages.mapdensitypop as mapdensitypop
+import Pages.gdplife as gdplife
+import Pages.comp as comp
+import Pages.poverty as poverty
 
 
 df=pd.read_csv('data_final.csv')
