@@ -5,7 +5,7 @@ import altair as alt
 from vega_datasets import data
 
 df=pd.read_csv('data_final.csv')
-df.fillna(0,inplace=True)
+
 control_dataset = df
 
 # ------------------------------Bubble Plot: GDP/Life----------------------------------------------------------------------------
@@ -28,7 +28,7 @@ def write():
            
     select_year = st.slider('Select one year:', 2000, 2018, 2000,step=1)
     
-    chart = alt.Chart(df[df["Year"]==select_year).mark_point(filled=True).encode(
+    chart = alt.Chart(df[df["Year"]==select_year]).mark_point(filled=True).encode(
         alt.X('Life Expectancy ', scale=alt.Scale(domain=(0, 85))),
         alt.Y('GDP per Capita', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
         # alt.Tooltip('Country'),
