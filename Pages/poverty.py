@@ -46,15 +46,23 @@ def write():
     
     
     st.header('A major indicator : Poverty ')
+    st.markdown('''Poverty is influenced by and influences population dynamics, including population growth, age structure, and rural-urban distribution. All of this has a critical impact on a country's development prospects and prospects for raising living standards for the poor.
+    ''')
     
-    '''Poverty is influenced by and influences population dynamics, including population growth, age structure, and rural-urban distribution. All of this has a critical impact on a country's development prospects and prospects for raising living standards for the poor.
-    '''
     
     countries = data2['Country'].unique().tolist()
     countries.remove("Angola")
     cty = st.selectbox("Select country:",countries)
     
     st.header(f" Evolution of poor population in {cty}")
+    myexpandER = st.beta_expander('Usage')
+    myexpandER.write('''Please select one country in the list and then select the option you want to see. Each option will display the named variable(s). Please not that these are absolute value and not percentages.''')
+    myExpandER = st.beta_expander('Explanation')
+    myExpandER.write('''The share of people living in extreme poverty, as assessed by the international poverty line (IPL)
+    estimated by the World Bank, has become one of the most prominent indicators for assessing
+    progress in global economic development. It has been a central indicator for the Millennium
+    Development Goals and is now an important indicator among the Sustainable Development
+    Goals''')
     
     pop = alt.Chart(data2[data2["Country"] == cty]).mark_area(color="#F6DE74").encode(
         x="Year:N",
@@ -103,13 +111,13 @@ def write():
     else:
         st.altair_chart(pop + pop190 + pop590)
     
-    ''' The share of people living in extreme poverty, as assessed by the international poverty line (IPL)
-    estimated by the World Bank, has become one of the most prominent indicators for assessing
-    progress in global economic development. It has been a central indicator for the Millennium
-    Development Goals and is now an important indicator among the Sustainable Development
-    Goals'''
+    st.header('Comparisons between countries for different levels of poverty.)
+    myexpandER = st.beta_expander('Usage')
+    myexpandER.write('''Please type countries name and select a period of time to see the comparisons. ''')
+    myExpandER = st.beta_expander('Explanation')
+    myExpandER.write('''XXX
     
-    
+    ''')
     
     selectCountry = st.multiselect('Select country or countries:',
                             data2.groupby('Country').count().reset_index()['Country'].tolist(),
@@ -118,7 +126,7 @@ def write():
     select_period = st.slider('Select period:', int(str(minyear)), int(str(maxyear)), (2000, 2018))
     
     
-    st.subheader('Share of population living under 5.90$')
+    st.subheader('Share of population living under 5.90$'|'Share of population living under 1.90$')
     
     chart1 = alt.Chart(data2).mark_line().encode(
         alt.X('Year:O'),
@@ -131,10 +139,7 @@ def write():
         width=700, # set the chart width to 400 pixels
         height=450  # set the chart height to 50 pixels
     )
-    st.altair_chart(chart1)
     
-    
-    st.subheader('Share of population living under 1.90$')
     
     chart2 = alt.Chart(data2).mark_line().encode(
         alt.X('Year:O'),
@@ -147,5 +152,6 @@ def write():
         width=700, # set the chart width to 400 pixels
         height=450  # set the chart height to 50 pixels
     )
-    st.altair_chart(chart2)
+    st.altair_chart(chart1 | chart2)
+    
 
