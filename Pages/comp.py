@@ -46,7 +46,7 @@ def write():
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
         alt.Color('Population Status:N',scale=alt.Scale(domain=["Population living in a city of +1M inhabitants","Population living in a rural area","Unemployment Rate"],
-                          range=['red', 'gold','blue']),legend=None),
+                          range=['red', 'gold','blue'])),
         alt.Tooltip(['Country:N','Population Status:N','Proportion (%):Q'])
     ).interactive()
     
@@ -94,7 +94,7 @@ def write():
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
         alt.Color('Age Distribution:N',scale=alt.Scale(domain=["Population aged between 0-14","Population aged between 15-64","Population aged +65"],
-                          range=['green', 'silver','purple']),legend=None),
+                          range=['green', 'silver','purple'])),
         alt.Tooltip(['Country:N','Age Distribution:N','Proportion (%):Q'])
     ).interactive()
     
