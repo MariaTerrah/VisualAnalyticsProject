@@ -63,6 +63,7 @@ def write():
     progress in global economic development. It has been a central indicator for the Millennium
     Development Goals and is now an important indicator among the Sustainable Development
     Goals''')
+    collm1, collm2 = st.beta_columns(1,2)
     
     pop = alt.Chart(data2[data2["Country"] == cty]).mark_area(color="#F6DE74").encode(
         x="Year:N",
@@ -70,7 +71,7 @@ def write():
         tooltip=["Year", "Population"]
     
     ).properties(
-        width=700, # set the chart width to 400 pixels
+        width=collm2.width, # set the chart width to 400 pixels
         height=450  # set the chart height to 50 pixels
     ).interactive()
     
@@ -94,23 +95,22 @@ def write():
         height=450  # set the chart height to 50 pixels
     ).interactive()
     
-    collm1, collm2 = st.beta_columns(2)
     opt = collm1.radio(
         "Select option:",
         ('Total population', 'Population living under 1.90$ a day','Population living under 5.90$ a day', 'Total population and population living under 1.90$ a day','Total population and population living under 5.90$ a day','All'))
     
     if opt == 'Total population':
-        collm2.altair_chart(pop,use_column_width=True)
+        collm2.altair_chart(pop)
     elif opt == 'Population living under 1.90$ a day':
-        collm2.altair_chart(pop190,use_column_width=True)
+        collm2.altair_chart(pop190)
     elif opt == 'Population living under 5.90$ a day':
-        collm2.altair_chart(pop590,use_column_width=True)
+        collm2.altair_chart(pop590)
     elif opt == 'Total population and population living under 1.90$ a day':
-        collm2.altair_chart(pop + pop190,use_column_width=True)
+        collm2.altair_chart(pop + pop190)
     elif opt == 'Total population and population living under 5.90$ a day':
-        collm2.altair_chart(pop + pop590,use_column_width=True)
+        collm2.altair_chart(pop + pop590)
     else:
-        collm2.altair_chart(pop + pop190 + pop590,use_column_width=True)
+        collm2.altair_chart(pop + pop190 + pop590)
     
     st.header('Comparisons between countries for different levels of poverty.')
     myexpandER = st.beta_expander('Usage')
@@ -154,9 +154,9 @@ def write():
     col1, col2 = st.beta_columns(2)
 
     col1.header("Share of population living under 5.90$ ")
-    col1.altair_chart(chart1,use_column_width=True)
+    col1.altair_chart(chart1)
 
     col2.header("Share of population living under 1.90$")
-    col2.altair_chart(chart2,use_column_width=True)
+    col2.altair_chart(chart2)
     
 
