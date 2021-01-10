@@ -45,7 +45,8 @@ def write():
     ).encode(
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
-        alt.Color('Population Status:N'),
+        alt.Color('Population Status:N',scale=alt.Scale(domain=["Population living in a city of +1M inhabitants","Population living in a rural area","Unemployment Rate"],
+                          range=['red', 'gold','blue']),legend=None),
         alt.Tooltip(['Country:N','Population Status:N','Proportion (%):Q'])
     ).interactive()
     
@@ -69,7 +70,7 @@ def write():
     
     coll3, coll4 = st.beta_columns(2)
     country3 = coll3.selectbox("Select the first country:",countries)
-    country4 = Coll4.selectbox("Select the second country:",countries)
+    country4 = coll4.selectbox("Select the second country:",countries)
     
     c3=alt.Chart(df[df["Country"]==country3]).transform_fold(
         ["Population aged between 0-14","Population aged between 15-64","Population aged +65"],
@@ -92,7 +93,8 @@ def write():
     ).encode(
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
-        alt.Color('Age Distribution:N'),
+        alt.Color('Age Distribution:N',scale=alt.Scale(domain=["Population aged between 0-14","Population aged between 15-64","Population aged +65"],
+                          range=['green', 'silver','purple']),legend=None),
         alt.Tooltip(['Country:N','Age Distribution:N','Proportion (%):Q'])
     ).interactive()
     
