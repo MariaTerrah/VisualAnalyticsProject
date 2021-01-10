@@ -5,7 +5,7 @@ import altair as alt
 from vega_datasets import data
 
 df=pd.read_csv('data_final.csv')
-df.fillna(0,inplace=True)
+
 
 # ------------------------------Bubble Plot: GDP/Life----------------------------------------------------------------------------
 def write():
@@ -38,12 +38,12 @@ def write():
         bind=alt.binding_select(options=years) # bind to a menu of unique genre values
     )
     chart = alt.Chart(df).mark_point(filled=True).encode(
-        alt.X('GDPCapita:Q', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
-        alt.Y('LifeExp:Q', scale=alt.Scale(domain=(0, 85))),
+        alt.Y('GDPCapita:Q', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
+        alt.X('LifeExp:Q', scale=alt.Scale(domain=(0, 85))),
         # alt.Tooltip('Country'),
         tooltip=[alt.Tooltip('Country:N'),
                  alt.Tooltip('GDPCapita:Q'),
-                 alt.Tooltip('LifeExp :Q'),
+                 alt.Tooltip('LifeExp:Q'),
                  alt.Tooltip('Population:Q')
                  ],
         size=alt.Size('Population:Q', scale=alt.Scale(range=[100, 2000])),
