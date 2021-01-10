@@ -126,7 +126,7 @@ def write():
     select_period = st.slider('Select period:', int(str(minyear)), int(str(maxyear)), (2000, 2018))
     
     
-    st.subheader('Share of population living under 5.90$'|'Share of population living under 1.90$')
+    st.subheader('Share of population living under 5.90$ (left) and Share of population living under 1.90$ (right)')
     
     chart1 = alt.Chart(data2).mark_line().encode(
         alt.X('Year:O'),
