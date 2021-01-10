@@ -74,7 +74,7 @@ def write():
     map = (
             (geoshape + chart)
                 .configure_view(strokeWidth=0)
-                .properties(width=700, height=400)
+                .properties(height=400)
                 .project("naturalEarth1")
         )
     st.altair_chart(map)
