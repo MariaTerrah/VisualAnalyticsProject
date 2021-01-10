@@ -10,7 +10,7 @@ control_dataset = df
 
 # ------------------------------Density and Population----------------------------------------------------------------------------
 def write():
-    st.header("Most Densly populated countries across the world! ")
+    st.header(":cityscape: Most Densly populated countries across the world! ")
     st.markdown('''In the following choropleth map, we can identify the population of each country which is encoded by color intensity. 
         We can also see the evolution of density encoded with shape of red colored bubbles. The evolution of data is from 2000 to 2018.''')
     mexpander = st.beta_expander('Usage')
@@ -27,7 +27,7 @@ def write():
         fill='lightgray',
         stroke='white'
     ).properties(
-        width=800,
+        width=900,
         height=400
     )
     
