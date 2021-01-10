@@ -34,7 +34,7 @@ def write():
                  alt.Tooltip('GDP per Capita:Q'),
                  alt.Tooltip('Life Expectancy :Q'),
                  alt.Tooltip('Population:Q'),
-                 alt.Tooltip('Year:O)
+                 alt.Tooltip('Year:O')
                  ],
         size=alt.Size('Population', scale=alt.Scale(range=[100, 2000])),
         color=alt.Color('Country', legend=None)
