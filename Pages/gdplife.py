@@ -27,8 +27,8 @@ def write():
     select_year = st.slider('Select one year:', 2000, 2018, 2000)
     
     chart = alt.Chart(df[df["Year"]==select_year]).mark_point(filled=True).encode(
-        alt.X('GDP per Capita', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
-        alt.Y('Life Expectancy', scale=alt.Scale(domain=(0, 85))),
+        alt.Y('GDP per Capita', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
+        alt.X('Life Expectancy', scale=alt.Scale(domain=(0, 85))),
         # alt.Tooltip('Country'),
         tooltip=[alt.Tooltip('Country:N'),
                  alt.Tooltip('GDP per Capita:Q'),
@@ -37,6 +37,6 @@ def write():
                  ],
         size=alt.Size('Population', scale=alt.Scale(range=[100, 2000])),
         color=alt.Color('Country', legend=None)
-    )
+    ).properties(height=600, width=800)
     
     st.altair_chart(chart)
