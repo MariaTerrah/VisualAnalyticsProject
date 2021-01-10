@@ -33,7 +33,7 @@ def write():
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
         alt.Color('Population Status:N',scale=alt.Scale(domain=["Population living in a city of +1M inhabitants","Population living in a rural area","Unemployment Rate"],
-                          range=['red', 'gold','blue'])),
+                          range=['red', 'gold','blue'])),legend=None,
         alt.Tooltip(['Country:N','Population Status:N','Proportion (%):Q'])
     ).interactive()
     
@@ -67,8 +67,9 @@ def write():
     MYExpander = st.beta_expander('Explanation')
     MYExpander.write('''The difference between developping countries and Western countries in quite stricking. Try comparing the percentage of young people of an African country like Niger with an aging country like Belgium.''')
     
-    country3 = st.selectbox("Select the first country:",countries)
-    country4 = st.selectbox("Select the second country:",countries)
+    coll3, coll4 = st.beta_columns(2)
+    country3 = coll3.selectbox("Select the first country:",countries)
+    country4 = Coll4.selectbox("Select the second country:",countries)
     
     c3=alt.Chart(df[df["Country"]==country3]).transform_fold(
         ["Population aged between 0-14","Population aged between 15-64","Population aged +65"],
@@ -95,4 +96,8 @@ def write():
         alt.Tooltip(['Country:N','Age Distribution:N','Proportion (%):Q'])
     ).interactive()
     
-    st.altair_chart(c3 | c4)
+    coll3.header(country3)
+    coll3.altair_chart(c3)
+
+    coll4.header(country4)
+    coll4.altair_chart(c4)
