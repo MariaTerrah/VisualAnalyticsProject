@@ -27,20 +27,18 @@ def write():
                        "Population aged between 15-64",	
                        "Population aged +65"	
                        ]
-    
+    st.markdown('In the following map, we can identify the intensity of a specific parameter for each country. We can also see the evolution of these parameters from 2000 to 2018.')
+    my_expander = st.beta_expander('Usage')
+    my_expander.write('''Please select parameter to be analysed by using drop down menu.
+            And then please TYPE the year (between 2000 to 2018) to visualize selected parameter across the world.
+            After mouse hover, you will be able to read the country name, parameter value and year for each country in the world map.''') 
     cols = st.selectbox('Select parameter to visualize: ', control_metrics)
     
     if cols in control_metrics:
         metric_to_show = cols + ":Q"
         metric_name = cols
         metric_name
-         
-    st.markdown('In the following map, we can identify the intensity of a specific parameter for each country. We can also see the evolution of these parameters from 2000 to 2018.')
-    my_expander = st.beta_expander('Usage')
-    my_expander.write('''Please select parameter to be analysed by using drop down menu.
-            And then please TYPE the year (between 2000 to 2018) to visualize selected parameter across the world.
-            After mouse hover, you will be able to read the country name, parameter value and year for each country in the world map.''')
-    clicked = my_expander.button('Click me!')       
+               
 
     ####### Map Visualization
     
