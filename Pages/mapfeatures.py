@@ -34,19 +34,18 @@ def write():
         metric_to_show = cols + ":Q"
         metric_name = cols
         metric_name
-    
-    
-    '''
-        In the following map, we can identify the intensity of a specific parameter for each country. 
-        We can also see the evolution of these parameters from 2000 to 2018.
-        
-        Usage:
+         
+    st.markdown('In the following map, we can identify the intensity of a specific parameter for each country. We can also see the evolution of these parameters from 2000 to 2018.')
+            
+    my_expander = st.beta_expander()
+    with my_expander:
+       '''Usage:
         
             Please select parameter to be analysed by using drop down menu.
             And then please TYPE the year (between 2000 to 2018) to visualize selected parameter across the world.
-            After mouse hover, you will be able to read the country name, parameter value and year for each country in the world map.
-    
-    '''
+            After mouse hover, you will be able to read the country name, parameter value and year for each country in the world map.'''
+       clicked = st.button('Click me!')
+
     ####### Map Visualization
     
     source = alt.topo_feature(data.world_110m.url, "countries")
