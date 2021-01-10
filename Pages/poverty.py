@@ -11,7 +11,7 @@ control_dataset = df
     
 # ------------------------------Poverty----------------------------------------------------------------------------
 
-def poverty():
+def write():
 
     df['Population living under $1.90 per day']=(df['Population']*df['Population with less than $1.90 per day'])/100
     df['Population living under $5.90 per day']=(df['Population']*df['Population with less than $5.90 per day'])/100
