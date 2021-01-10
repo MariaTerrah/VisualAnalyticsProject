@@ -39,6 +39,6 @@ def write():
                  ],
         size=alt.Size('Population', scale=alt.Scale(range=[100, 2000])),
         color=alt.Color('Country', legend=None)
-    ).properties(height=600, width=800).transform_filter(select_year)
+    ).properties(height=600, width=800).interactive()
     
     st.altair_chart(chart)
