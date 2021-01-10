@@ -26,10 +26,7 @@ def write():
     ''')
         
            
-    select_year = alt.selection_single(
-        name='select', fields=['Year'], init={'Year': 2000},
-        bind=alt.binding_range(min=2000, max=2018, step=1)
-    )
+    select_year = st.slider('Select one year:', 2000, 2018, 2000,step=1)
     
     chart = alt.Chart(df).mark_point(filled=True).encode(
         alt.X('Life Expectancy ', scale=alt.Scale(domain=(0, 85))),
@@ -42,6 +39,6 @@ def write():
                  ],
         size=alt.Size('Population', scale=alt.Scale(range=[100, 2000])),
         color=alt.Color('Country', legend=None)
-    ).properties(height=600, width=800).add_selection(select_year).transform_filter(select_year)
+    ).properties(height=600, width=800).transform_filter({'field': 'Year', 'range': select_year)
     
     st.altair_chart(chart)
