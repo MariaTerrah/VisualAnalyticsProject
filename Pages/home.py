@@ -21,8 +21,5 @@ def write():
 
     #Disclaimers----------------------------------------------------------------------------
     st.header('Disclaimers')
-    ''' 
-    The goal of this tool is to be able to learn more about the status of the 7 billion people living on earth. This tool tries to describe where and how people are living. 
-    The living conditions are described by life expectancy, density, etc. However, some data must be approached carefully: most of the values are calculated according to international standards but some may not reflect the entire reality. 
-    For example, GDP per capita is not a real measure of the wealth distribution. But, when confronted to other indicators it helps understand the actual distribution.
-    ''' 
+
+    st.markdown('_The goal of this tool is to be able to learn more about the status of the 7 billion people living on earth. This tool tries to describe where and how people are living. The living conditions are described by life expectancy, density, etc. However, some data must be approached carefully: most of the values are calculated according to international standards but some may not reflect the entire reality. For example, GDP per capita is not a real measure of the wealth distribution. But, when confronted to other indicators it helps understand the actual distribution._') 
