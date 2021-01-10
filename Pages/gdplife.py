@@ -26,17 +26,29 @@ def write():
            
     select_year = st.slider('Select one year:', 2000, 2018, 2000)
     
-    chart = alt.Chart(df[df["Year"]==select_year]).mark_point(filled=True).encode(
-        alt.Y('GDP per Capita:Q', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
-        alt.X('Life Expectancy:Q', scale=alt.Scale(domain=(0, 85))),
+    years = df['Year'].unique() # get unique field values
+    years = list(filter(lambda d: d is not None, years)) # filter out None values
+    years.sort()
+
+    selectYear = alt.selection_single(
+        name='Select', # name the selection 'Select'
+        fields=['Year'], # limit selection to the Major_Genre field
+        init={'Year': years[0]}, # use first genre entry as initial value
+        bind=alt.binding_select(options=years) # bind to a menu of unique genre values
+    )
+    chart = alt.Chart(df).mark_point(filled=True).encode(
+        alt.X('GDPCapita:Q', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
+        alt.Y('LifeExp:Q', scale=alt.Scale(domain=(0, 85))),
         # alt.Tooltip('Country'),
         tooltip=[alt.Tooltip('Country:N'),
-                 alt.Tooltip('GDP per Capita:Q'),
-                 alt.Tooltip('Life Expectancy :Q'),
+                 alt.Tooltip('GDPCapita:Q'),
+                 alt.Tooltip('LifeExp :Q'),
                  alt.Tooltip('Population:Q')
                  ],
         size=alt.Size('Population:Q', scale=alt.Scale(range=[100, 2000])),
-        color=alt.Color('Country:N', legend=None)
+        color=alt.Color('Country:N', legend=None)).add_selection(selectYear
+    ).transform_filter(
+    selectYear
     ).properties(height=600, width=800)
     
     st.altair_chart(chart)
