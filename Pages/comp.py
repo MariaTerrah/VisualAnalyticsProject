@@ -20,9 +20,9 @@ def write():
     mYExpander = st.beta_expander('Explanation')
     mYExpander.write('''It is very interesting to see that unemployment is not a rural country issue. In fact countries with high urban rates suffer also, even more, than rural countries.
     ''')
-
-    country1 = st.selectbox("Select a country:",countries)
-    country2 = st.selectbox("Select another country:",countries)
+    coll1, coll2 = st.beta_columns(2)
+    country1 = coll1.selectbox("Select a country:",countries)
+    country2 = coll2.selectbox("Select another country:",countries)
     
     c1=alt.Chart(df[df["Country"]==country1]).transform_fold(
         ["Population living in a city of +1M inhabitants","Population living in a rural area","Unemployment Rate"],
@@ -49,7 +49,6 @@ def write():
         alt.Tooltip(['Country:N','Population Status:N','Proportion (%):Q'])
     ).interactive()
     
-    coll1, coll2 = st.beta_columns(2)
 
     coll1.header(country1)
     coll1.altair_chart(c1)
