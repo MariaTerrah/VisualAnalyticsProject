@@ -5,6 +5,7 @@ import altair as alt
 from vega_datasets import data
 
 df=pd.read_csv('data_final.csv')
+df.fillna(0,inplace=True)
 
 # ------------------------------Bubble Plot: GDP/Life----------------------------------------------------------------------------
 def write():
