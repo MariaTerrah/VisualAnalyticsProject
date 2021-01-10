@@ -33,8 +33,8 @@ def write():
     )
     
     chart = alt.Chart(df).mark_point(filled=True).encode(
-        alt.X('Life Expectancy ', scale=alt.Scale(domain=(0, 85))),
-        alt.Y('GDP per Capita', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
+        alt.Y('Life Expectancy ', scale=alt.Scale(domain=(0, 85))),
+        alt.X('GDP per Capita', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
         # alt.Tooltip('Country'),
         tooltip=[alt.Tooltip('Country:N'),
                  alt.Tooltip('GDP per Capita:Q'),
