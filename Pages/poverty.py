@@ -70,7 +70,9 @@ def write():
         y="Population",
         tooltip=["Year", "Population"]
     
-    ).interactive()
+    ).properties(
+        width=700, # set the chart width to 400 pixels
+        height=450).interactive()
     
     pop190 = alt.Chart(data2[data2["Country"] == cty]).mark_area(color="#4BAB57").encode(
         x="Year:N",
