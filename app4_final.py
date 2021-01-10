@@ -27,6 +27,7 @@ PAGES = {
     "Poverty": poverty,
 }
 def main():
+    st.set_page_config(layout="wide")
     st.sidebar.title('Population Analytics')
     selection = st.sidebar.radio("Choose a topic", list(PAGES.keys()))
     page = PAGES[selection]
