@@ -10,7 +10,7 @@ countries = df['Country'].unique()
 
 # ------------------------------Comparison of pop status for two countries----------------------------------------------------------------------------
 def write():
-    st.header("Compare two countries! Population status")
+    st.header(":busts_in_silhouette: Compare two countries! Population status")
     st.markdown('''
         Here you can choose two countries and compare their populations over three parameters : the percentage of people living in a city that has over 1 million inhabitants, percentage of people living in a rural area and unemployment rate. 
         This tool help us not only compare countries but it challenges also the idea that countries with large cities have less unemployment. Rural countries are not always the one suffering from inactivity.
@@ -28,7 +28,7 @@ def write():
         ["Population living in a city of +1M inhabitants","Population living in a rural area","Unemployment Rate"],
         as_=['Population Status', 'Proportion (%)']
     ).mark_area(
-        opacity=0.3
+        opacity=1
     ).encode(
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
@@ -41,7 +41,7 @@ def write():
         ["Population living in a city of +1M inhabitants","Population living in a rural area","Unemployment Rate"],
         as_=['Population Status', 'Proportion (%)']
     ).mark_area(
-        opacity=0.3
+        opacity=1
     ).encode(
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
@@ -58,7 +58,7 @@ def write():
     coll2.altair_chart(c2)
     
     # ------------------------------Comparison of age distribution for two countries----------------------------------------------------------------------------
-    st.header("Compare two countries! Age Distribution")
+    st.header(":family: Compare two countries! Age Distribution")
     st.markdown('''
          Here you can choose two countries and compare their age distribution between three segments : under 14 years old, between 15 and 64 years old (this segment is considered as the labor force) and over 65 years old. 
          This is a very interesting tool because you can clearly see the difference between aging countries in the west and younger one in Africa.    
