@@ -6,8 +6,6 @@ from vega_datasets import data
 
 df=pd.read_csv('data_final.csv')
 
-control_dataset = df
-
 # ------------------------------Bubble Plot: GDP/Life----------------------------------------------------------------------------
 def write():
     st.header("How GDP per Capita and Life Expectancy with population of countries are related.")
@@ -26,7 +24,7 @@ def write():
     ''')
         
            
-    select_year = st.slider('Select one year:', 2000, 2018, 2000,step=1)
+    select_year = st.slider('Select one year:', 2000, 2018, 2000)
     
     chart = alt.Chart(df[df["Year"]==select_year]).mark_point(filled=True).encode(
         alt.X('Life Expectancy ', scale=alt.Scale(domain=(0, 85))),
