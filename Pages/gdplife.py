@@ -26,7 +26,7 @@ def write():
         
            
     select_year = st.slider('Select one year:', 2000, 2018, 2000)
-    df.rename(columns={'GDP per Capita':'GDPCapita','Life Expectancy':'LifeExp'})
+    
     years = df['Year'].unique() # get unique field values
     years = list(filter(lambda d: d is not None, years)) # filter out None values
     years.sort()
@@ -52,4 +52,3 @@ def write():
     
     st.altair_chart(chart)
     
-    st.altair_chart(chart)
