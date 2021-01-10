@@ -27,8 +27,8 @@ def write():
     c1=alt.Chart(df[df["Country"]==country1]).transform_fold(
         ["Population living in a city of +1M inhabitants","Population living in a rural area","Unemployment Rate"],
         as_=['Population Status', 'Proportion (%)']
-    ).mark_area(
-        opacity=1
+    ).mark_line(
+        opacity=0.3
     ).encode(
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
@@ -40,8 +40,8 @@ def write():
     c2=alt.Chart(df[df["Country"]==country2]).transform_fold(
         ["Population living in a city of +1M inhabitants","Population living in a rural area","Unemployment Rate"],
         as_=['Population Status', 'Proportion (%)']
-    ).mark_area(
-        opacity=1
+    ).mark_line(
+        opacity=0.3
     ).encode(
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
