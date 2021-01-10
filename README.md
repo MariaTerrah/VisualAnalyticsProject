@@ -1,5 +1,5 @@
 # VisualAnalyticsProject : Population analytics :earth_africa:
-## Get to know better the most and least populated areas of the world and their main characteritics.
+## :bulb: Get to know better the most and least populated areas of the world and their main characteritics.
 This project is about population and main characterics of countries accross the world. The tool is interactive and helps you understand some insights about where and how the 7 billion people live. The main features are: Density, Poverty, Literacy Rate, GDP per capita, GINI Index, Rural Population, Population living in a city of more than 1 million inhabitants, Unemployment Rate, Life Expectancy, Fertility Rate and Age  Distribution of the population in 3 segments. Data are available from 2000 to 2018.
 ### :bar_chart: Dashboard 
 The dashboard is composed of several features : map visualisations, countries comparators and graphs. Many tools are interactive and enable you to explore data through years, features, countries. Use the navigation menu to explore the 6 pages : Home, Maps, Density and Population, Life expectancy and GDP, Comparisons, Poverty.
