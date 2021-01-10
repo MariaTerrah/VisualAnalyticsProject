@@ -4,8 +4,8 @@ This project is about population and main characterics of countries accross the 
 ## Dashboard
 The dashboard is composed of several features : map visualisations, countries comparators and graphs. Many tools are interactive and enable you to explore data through years, features, countries.
 ## Team members
-Pooja BELURE
-Maria TERRAH
+Pooja BELURE,
+Maria TERRAH,
 Minato BEN AHMED DAHO
 ## Sources
 All the data are coming from the World Bank OpenData website :
