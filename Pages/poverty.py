@@ -111,7 +111,7 @@ def write():
     else:
         st.altair_chart(pop + pop190 + pop590)
     
-    st.header('Comparisons between countries for different levels of poverty.)
+    st.header('Comparisons between countries for different levels of poverty.')
     myexpandER = st.beta_expander('Usage')
     myexpandER.write('''Please type countries name and select a period of time to see the comparisons. ''')
     myExpandER = st.beta_expander('Explanation')
