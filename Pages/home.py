@@ -12,7 +12,6 @@ control_dataset = df
 # ------------------------------Home----------------------------------------------------------------------------
 
 def write():
-    st.set_page_config(layout="wide")
     st.title("Population Analytics")
     
     st.header("How are population, density, poverty and other parameters spread across the world ? ")
