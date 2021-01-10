@@ -35,8 +35,8 @@ def write():
                  alt.Tooltip('Life Expectancy :Q'),
                  alt.Tooltip('Population:Q')
                  ],
-        size=alt.Size('Population', scale=alt.Scale(range=[100, 2000])),
-        color=alt.Color('Country', legend=None)
+        size=alt.Size('Population:Q', scale=alt.Scale(range=[100, 2000])),
+        color=alt.Color('Country:N', legend=None)
     ).properties(height=600, width=800)
     
     st.altair_chart(chart)
