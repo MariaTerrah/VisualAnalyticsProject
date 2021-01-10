@@ -49,7 +49,13 @@ def write():
         alt.Tooltip(['Country:N','Population Status:N','Proportion (%):Q'])
     ).interactive()
     
-    st.altair_chart(c1 | c2)
+    coll1, coll2 = st.beta_columns(2)
+
+    coll1.header(country1)
+    coll1.altair_chart(c1)
+
+    coll2.header(country2)
+    coll2.altair_chart(c2)
     
     # ------------------------------Comparison of age distribution for two countries----------------------------------------------------------------------------
     st.header("Compare two countries! Age Distribution")
