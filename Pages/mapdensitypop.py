@@ -11,14 +11,11 @@ control_dataset = df
 # ------------------------------Density and Population----------------------------------------------------------------------------
 def write():
     st.header("Most Densly populated countries across the world! ")
-    '''
-        In the following choropleth map, we can identify the population of each country which is encoded by color intensity. 
-        We can also see the evolution of density encoded with shape of red colored bubbles. The evolution of data is from 2000 to 2018.
-        
-        Usage:
-        
-            Please hover on red bubbles and on countries to see data values for population and density. Bigger shape of the bubbles shows the highly dense value.
-    '''
+    st.markdown('''In the following choropleth map, we can identify the population of each country which is encoded by color intensity. 
+        We can also see the evolution of density encoded with shape of red colored bubbles. The evolution of data is from 2000 to 2018.''')
+    mexpander = st.beta_expander('Usage')
+    mexpander.write('''Please hover on red bubbles and on countries to see data values for population and density. Bigger shape of the bubbles shows the highly dense value.''') 
+
     # data_selected
     # Year Selection:
     user_input_1 = st.text_input("Please TYPE the year (between 2000 to 2018) to visualize densely populated countries for selected year, default year is 2000.", 2000)
@@ -30,7 +27,7 @@ def write():
         fill='lightgray',
         stroke='white'
     ).properties(
-        width=700,
+        width=800,
         height=400
     )
     
