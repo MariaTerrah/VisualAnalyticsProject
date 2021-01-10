@@ -63,7 +63,7 @@ def write():
     progress in global economic development. It has been a central indicator for the Millennium
     Development Goals and is now an important indicator among the Sustainable Development
     Goals''')
-    collm1, collm2 = st.beta_columns(1,2)
+    collm1, collm2 = st.beta_columns((1,2))
     
     pop = alt.Chart(data2[data2["Country"] == cty]).mark_area(color="#F6DE74").encode(
         x="Year:N",
