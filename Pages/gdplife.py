@@ -27,16 +27,11 @@ def write():
            
     select_year = st.slider('Select one year:', 2000, 2018, 2000)
     
-    years = df['Year'].unique() # get unique field values
-    years = list(filter(lambda d: d is not None, years)) # filter out None values
-    years.sort()
-
-    selectYear = alt.selection_single(
-        name='Select', # name the selection 'Select'
-        fields=['Year'], # limit selection to the Major_Genre field
-        init={'Year': years[0]}, # use first genre entry as initial value
-        bind=alt.binding_select(options=years) # bind to a menu of unique genre values
+    select_year = alt.selection_single(
+        name='select', fields=['Year'], init={'Year': 2000},
+        bind=alt.binding_range(min=2000, max=2018, step=1)
     )
+    
     chart = alt.Chart(df).mark_point(filled=True).encode(
         alt.X('Life Expectancy ', scale=alt.Scale(domain=(0, 85))),
         alt.Y('GDP per Capita', scale=alt.Scale(type='log', base=10, domain=(100, 80000))),
