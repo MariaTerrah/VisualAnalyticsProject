@@ -125,9 +125,6 @@ def write():
     
     select_period = st.slider('Select period:', int(str(minyear)), int(str(maxyear)), (2000, 2018))
     
-    
-    st.subheader('Share of population living under 5.90$ (left) and Share of population living under 1.90$ (right)')
-    
     chart1 = alt.Chart(data2).mark_line().encode(
         alt.X('Year:O'),
         alt.Y('per_pop_590:Q',axis=alt.Axis(title='% of population living under 5.90$')),
@@ -152,6 +149,13 @@ def write():
         width=700, # set the chart width to 400 pixels
         height=450  # set the chart height to 50 pixels
     )
-    st.altair_chart(chart1 | chart2)
+        
+    col1, col2 = st.beta_columns(2)
+
+    col1.header("Share of population living under 5.90$ ")
+    col1.altair_chart(chart1)
+
+    col2.header("Share of population living under 1.90$")
+    col2.altair_chart(chart2)
     
 
