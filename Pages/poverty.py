@@ -100,17 +100,17 @@ def write():
         ('Total population', 'Population living under 1.90$ a day','Population living under 5.90$ a day', 'Total population and population living under 1.90$ a day','Total population and population living under 5.90$ a day','All'))
     
     if opt == 'Total population':
-        collm2.altair_chart(pop)
+        collm2.altair_chart(pop,use_column_width=True)
     elif opt == 'Population living under 1.90$ a day':
-        collm2.altair_chart(pop190)
+        collm2.altair_chart(pop190,use_column_width=True)
     elif opt == 'Population living under 5.90$ a day':
-        collm2.altair_chart(pop590)
+        collm2.altair_chart(pop590,use_column_width=True)
     elif opt == 'Total population and population living under 1.90$ a day':
-        collm2.altair_chart(pop + pop190)
+        collm2.altair_chart(pop + pop190,use_column_width=True)
     elif opt == 'Total population and population living under 5.90$ a day':
-        collm2.altair_chart(pop + pop590)
+        collm2.altair_chart(pop + pop590,use_column_width=True)
     else:
-        collm2.altair_chart(pop + pop190 + pop590)
+        collm2.altair_chart(pop + pop190 + pop590,use_column_width=True)
     
     st.header('Comparisons between countries for different levels of poverty.')
     myexpandER = st.beta_expander('Usage')
@@ -154,9 +154,9 @@ def write():
     col1, col2 = st.beta_columns(2)
 
     col1.header("Share of population living under 5.90$ ")
-    col1.altair_chart(chart1)
+    col1.altair_chart(chart1,use_column_width=True)
 
     col2.header("Share of population living under 1.90$")
-    col2.altair_chart(chart2)
+    col2.altair_chart(chart2,use_column_width=True)
     
 
