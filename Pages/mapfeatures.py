@@ -11,7 +11,7 @@ control_dataset = df
 # ------------------------------Maps----------------------------------------------------------------------------
    
 def write():
-    st.header("A global view of the parameter spread around the world by using map.")
+    st.header(":world_map: Global view of parameters spread around the world.")
         
     years = df['Year'].unique()
     
@@ -74,7 +74,7 @@ def write():
     map = (
             (geoshape + chart)
                 .configure_view(strokeWidth=0)
-                .properties(width=800, height=400)
+                .properties(width=900, height=400)
                 .project("naturalEarth1")
         )
     st.altair_chart(map)
