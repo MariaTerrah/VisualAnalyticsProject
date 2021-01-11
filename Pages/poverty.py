@@ -116,6 +116,7 @@ def write():
     myexpandER.write('''Please select countries and a period of time to plot. ''')
     myExpandER = st.beta_expander('Explanation')
     myExpandER.write(''' 
+    The international poverty line, currently set at $1.90 a day, is the universal standard for measuring global poverty. This line helps measure the number of people living in extreme poverty and helps compare poverty levels between countries.
     
     ''')
     
@@ -152,10 +153,10 @@ def write():
         
     col1, col2 = st.beta_columns(2)
 
-    col1.header("Share of population living under 5.90$ ")
+    col1.header("Share of population living under 5.90$ a day ")
     col1.altair_chart(chart1)
 
-    col2.header("Share of population living under 1.90$")
+    col2.header("Share of population living under 1.90$ a day")
     col2.altair_chart(chart2)
     
 
