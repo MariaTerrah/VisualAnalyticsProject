@@ -12,6 +12,8 @@ Minato BEN AHMED DAHO
 ## :information_source: Sources
 All the data are coming from the World Bank OpenData website :
 https://databank.worldbank.org/source/world-development-indicators#
+Resources about Streamlit can be find here:
+https://github.com/MarcSkovMadsen/awesome-streamlit/tree/be454e29c35a9a1a760b1737a5176a47f4f9717b
 
 ## :warning: Disclaimers 
 The goal of this tool is to be able to learn more about the status of the 7 billion people living on earth. This tool tries to describe where and how people are living. The living conditions are described by life expectancy, density, etc. However, some data must be approached carefully: most of the values are calculated according to international standards but some may not reflect the entire reality. For example, GDP per capita is not a real measure of the wealth distribution. But, when confronted to other indicators it helps understand the actual distribution.
