@@ -118,7 +118,7 @@ def write():
     myexpandER.write('''Please select countries and a period of time to plot. ''')
     myExpandER = st.beta_expander('Explanation')
     myExpandER.write(''' 
-    This graph on the left ( respectively on the right) allows to compare the percentage of people living under 5.90$ ( respectively under 1.90$ ) in the different countries.
+    This graph on the left (respectively on the right) allows to compare the percentage of people living under 5.90$ (respectively under 1.90$) in the different countries.
     ''')
     
     selectCountry = st.multiselect('Select country or countries:',
