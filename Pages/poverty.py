@@ -45,7 +45,7 @@ def write():
     data2.rename(columns={'Population with less than $1.90 per day':'per_pop_190','Population with less than $5.90 per day':'per_pop_590','Population living under $1.90 per day':'pop190','Population living under $5.90 per day':'pop590'},inplace=True)
     
     
-    st.header('A major indicator : Poverty ')
+    st.header(':chart_with_upwards_trend: A major indicator : Poverty ')
     st.markdown('''Poverty is influenced by and influences population dynamics, including population growth, age structure, and rural-urban distribution. All of this has a critical impact on a country's development prospects and prospects for raising living standards for the poor.
     ''')
     
@@ -54,7 +54,7 @@ def write():
     countries.remove("Angola")
     cty = st.selectbox("Select country:",countries)
     
-    st.header(f" Evolution of poor population in {cty}")
+    st.header(f" :bar_chart: Evolution of poor population in {cty}")
     myexpandER = st.beta_expander('Usage')
     myexpandER.write('''Please select one country in the list and then select the option you want to see. Each option will display the named variable(s). Please not that these are absolute value and not percentages.''')
     myExpandER = st.beta_expander('Explanation')
@@ -111,7 +111,7 @@ def write():
     else:
         collm2.altair_chart(pop + pop190 + pop590)
     
-    st.header('Comparisons between countries for different levels of poverty.')
+    st.header(':globe_with_meridians: Comparisons between countries for different levels of poverty.')
     myexpandER = st.beta_expander('Usage')
     myexpandER.write('''Please type countries name and select a period of time to see the comparisons. ''')
     myExpandER = st.beta_expander('Explanation')
