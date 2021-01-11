@@ -20,9 +20,12 @@ def write():
     st.header(':grey_question: How are population, density, poverty and other parameters spread across the world ?')
 
     st.markdown('When it comes to learning more about the population distribution over the world, one can certainly wonder first where are the most populated areas. However, this isn’t enough to know who lives there and how. Therefore, we decided to add some useful features, when available, like density, poverty, literacy rate, GDP per capita, GINI index, rural population, population living in a city of more than 1 million inhabitants, unemployment rate, life expectancy, fertility rate and distribution of the population in 3 segments (children, labor force, elder people). This enable us to know more about the status of each country : for example China may be a highy populated country as India but the difference is that India is a younger country.')
+    myEXPander = st.beta_expander('Usage')
+    myEXPander.write('''Use the navigation menu to visit all different pages! :warning: If you find out that the app is too slow and that you are not able to see all visualisations please try it on another web browser.
+    ''')
     st.image(image, caption='According to the UN, we will be more than 9 billion people by 2050', use_column_width=True)
     st.markdown(':information_source: All the data are coming from the **World Bank OpenData** website, you can find the original dataset and the metadata on the github.')
-
+    
     #Disclaimers----------------------------------------------------------------------------
     st.header(':warning: Disclaimers')
 
