@@ -42,7 +42,7 @@ def write():
         as_=['Population Status', 'Proportion (%)']
     ).mark_area(
     opacity=0.5,
-    order=alt.Order("Proportion (%):Q", sort='descending')
+    order=alt.Order(True)
     ).encode(
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
