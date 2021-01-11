@@ -28,7 +28,8 @@ def write():
         ["Population living in a city of +1M inhabitants","Population living in a rural area","Unemployment Rate"],
         as_=['Population Status', 'Proportion (%)']
     ).mark_area(
-    opacity=0.5
+    opacity=0.5,
+    line=True
     ).encode(
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
@@ -77,7 +78,8 @@ def write():
         ["Population aged between 0-14","Population aged between 15-64","Population aged +65"],
         as_=['Age Distribution', 'Proportion (%)']
     ).mark_area(
-        opacity=0.3
+        opacity=0.3,
+        line=True
     ).encode(
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
@@ -90,7 +92,8 @@ def write():
         ["Population aged between 0-14","Population aged between 15-64","Population aged +65"],
         as_=['Age Distribution', 'Proportion (%)']
     ).mark_area(
-        opacity=0.3
+        opacity=0.3,
+        line=True
     ).encode(
         alt.X('Year:O'),
         alt.Y('Proportion (%):Q', stack=None),
