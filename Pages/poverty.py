@@ -111,11 +111,11 @@ def write():
     else:
         collm2.altair_chart(pop + pop190 + pop590)
     
-    st.header(':globe_with_meridians: Comparisons between countries for different levels of poverty.')
+    st.header(':globe_with_meridians: Comparisons between countries for 2 poverty lines.')
     myexpandER = st.beta_expander('Usage')
-    myexpandER.write('''Please type countries name and select a period of time to see the comparisons. ''')
+    myexpandER.write('''Please select countries and a period of time to plot. ''')
     myExpandER = st.beta_expander('Explanation')
-    myExpandER.write('''XXX
+    myExpandER.write(''' 
     
     ''')
     
