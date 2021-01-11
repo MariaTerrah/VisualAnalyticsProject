@@ -154,10 +154,10 @@ def write():
         
     col1, col2 = st.beta_columns(2)
 
-    col1.header("Share of population living under 5.90$ a day ")
+    col1.subheader("Share of population living under 5.90$ a day ")
     col1.altair_chart(chart1)
 
-    col2.header("Share of population living under 1.90$ a day")
+    col2.subheader("Share of population living under 1.90$ a day")
     col2.altair_chart(chart2)
     
 
