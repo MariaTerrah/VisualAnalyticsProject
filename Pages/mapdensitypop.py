@@ -43,7 +43,7 @@ def write():
         ]
     ).transform_lookup(
         lookup='id',
-        from_=alt.LookupData(data_selected, 'id', ['Country', 'Population', 'Year'])
+        from_=alt.LookupData(data_selected, 'id', ['Country', 'Population', 'Year','Density'])
     ).project(
         type='naturalEarth1'
     ).properties(
@@ -52,7 +52,7 @@ def write():
     )
     # chro
     
-    points = alt.Chart(df).mark_circle(filled=True,
+    points = alt.Chart().mark_circle(filled=True,
                                      opacity=0.4).encode(
         latitude='Latitude:Q',
         longitude='Longitude:Q',
