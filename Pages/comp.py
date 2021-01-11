@@ -47,8 +47,8 @@ def write():
         alt.Y('Proportion (%):Q', stack=None),
         alt.Color('Population Status:N',scale=alt.Scale(domain=["Population living in a city of +1M inhabitants","Population living in a rural area","Unemployment Rate"],
                           range=['red', 'gold','blue'])),
+        alt.Order("Proportion (%):Q", sort='descending'),
         alt.Tooltip(['Country:N','Population Status:N','Proportion (%):Q'])
-        alt.Order("Proportion (%):Q", sort='descending')
     ).interactive()
     
 
