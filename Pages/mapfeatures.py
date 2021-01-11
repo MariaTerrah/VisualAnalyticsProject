@@ -48,15 +48,13 @@ def write():
     user_input = st.text_input("Type year within 2000 to 2018", 2000)
     user_input = int(user_input)
     data_selected = df[df["Year"] == user_input]
-    # data_selected
     
     chart = (
         alt.Chart(source)
             .mark_geoshape(stroke="black", strokeWidth=0.15)
             .encode(
             color=alt.Color(
-                # "population:N", scale=alt.Scale(scheme="lighttealblue"), legend=None,
-                metric_to_show, scale=alt.Scale(scheme="lighttealblue"), legend=None
+                metric_to_show, scale=alt.Scale(scheme="lighttealblue"),
             ),
             tooltip=[
                 alt.Tooltip("Country:N", title="Country"),
