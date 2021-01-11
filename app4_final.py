@@ -29,7 +29,7 @@ PAGES = {
 def main():
     st.set_page_config(layout="wide")
     st.sidebar.title('Population Analytics')
-    selection = st.sidebar.radio("Choose a topic", list(PAGES.keys()))
+    selection = st.sidebar.radio("Menu", list(PAGES.keys()))
     page = PAGES[selection]
     page.write()
 
