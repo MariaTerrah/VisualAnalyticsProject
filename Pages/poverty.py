@@ -62,8 +62,8 @@ def write():
     estimated by the World Bank, has become one of the most prominent indicators for assessing
     progress in global economic development. It has been a central indicator for the Millennium
     Development Goals and is now an important indicator among the Sustainable Development
-    Goals. The international poverty line, currently set at $1.90 a day, is the universal standard for measuring global poverty. This line helps measure the number of people living in extreme poverty and helps compare poverty levels between countries.
-    The graph below shows how total population evolved in countries between 2000 and 2018 , but also number of people living under 1.90$ and under 5.90$ a day through these years.''')
+    Goals. The international poverty line, currently set at $ 1.90 a day, is the universal standard for measuring global poverty. This line helps measure the number of people living in extreme poverty and helps compare poverty levels between countries.
+    The graph below shows how total population evolved in countries between 2000 and 2018 , but also number of people living under $ 1.90 and under $ 5.90 a day through these years.''')
     
     collm1, collm2 = st.beta_columns((1,2))
     
