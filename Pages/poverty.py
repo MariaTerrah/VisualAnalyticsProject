@@ -65,7 +65,7 @@ def write():
     Goals.
     The international poverty line, currently set at $1.90 a day, is the universal standard for measuring global poverty. This line helps measure the number of people living in extreme poverty and helps compare poverty levels between countries.
     The graph below shows how total population evolved in countries between 2000 and 2018 , but also number of people living under 1.90$ and under 5.90$ a day through these years.''')
-    .''')
+    
     collm1, collm2 = st.beta_columns((1,2))
     
     pop = alt.Chart(data2[data2["Country"] == cty]).mark_area(color="#F6DE74").encode(
