@@ -56,7 +56,7 @@ def write():
     
     st.header(f" :bar_chart: Evolution of poor population in {cty}")
     myexpandER = st.beta_expander('Usage')
-    myexpandER.write('''Please select one country in the list and then select the option you want to see. Each option will display the named variable(s). Please not that these are absolute value and not percentages.''')
+    myexpandER.write('''Please select one country in the list and then select the option you want to see. Each option will display the named variable(s). Please not that these are absolute values  and not percentages.''')
     myExpandER = st.beta_expander('Explanation')
     myExpandER.write('''The share of people living in extreme poverty, as assessed by the international poverty line (IPL)
     estimated by the World Bank, has become one of the most prominent indicators for assessing
@@ -65,6 +65,7 @@ def write():
     Goals.
     The international poverty line, currently set at $1.90 a day, is the universal standard for measuring global poverty. This line helps measure the number of people living in extreme poverty and helps compare poverty levels between countries.
     The graph below shows how total population evolved in countries between 2000 and 2018 , but also number of people living under 1.90$ and under 5.90$ a day through these years.''')
+    .''')
     collm1, collm2 = st.beta_columns((1,2))
     
     pop = alt.Chart(data2[data2["Country"] == cty]).mark_area(color="#F6DE74").encode(
