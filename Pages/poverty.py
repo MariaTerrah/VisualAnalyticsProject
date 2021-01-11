@@ -47,7 +47,6 @@ def write():
     
     st.header(':chart_with_upwards_trend: A major indicator : Poverty ')
     st.markdown('''Poverty is influenced by and influences population dynamics, including population growth, age structure, and rural-urban distribution. All of this has a critical impact on a country's development prospects and prospects for raising living standards for the poor.
-    
     This tool helps visualizing poverty levels in countries of the worlds.''')
     
     
