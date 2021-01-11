@@ -37,7 +37,7 @@ def write():
         # stroke='GDPCapita:Q',
         tooltip=[
             alt.Tooltip("Country:N", title="Country"),
-            alt.Tooltip("Population:Q", title="population"),
+            alt.Tooltip("Population:Q", title="Population"),
             alt.Tooltip("Year:Q", title="Year"),
     
         ]
@@ -52,7 +52,7 @@ def write():
     )
     # chro
     
-    points = alt.Chart().mark_circle(filled=True,
+    points = alt.Chart(df).mark_circle(filled=True,
                                      opacity=0.4).encode(
         latitude='Latitude:Q',
         longitude='Longitude:Q',
