@@ -54,7 +54,7 @@ def write():
             .mark_geoshape(stroke="black", strokeWidth=0.15)
             .encode(
             color=alt.Color(
-                metric_to_show, scale=alt.Scale(scheme="lighttealblue"),
+                metric_to_show, scale=alt.Scale(scheme="lighttealblue"),legend=alt.Legend(title=metric_to_show)
             ),
             tooltip=[
                 alt.Tooltip("Country:N", title="Country"),
